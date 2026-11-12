@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-07-31T14:00:00.000Z" agent="ChatGPT Codex" version="24.7.17" type="device">
+  <diagram id="modelo-er-matricula-limpio" name="Modelo E-R">
+    <mxGraphModel dx="1500" dy="880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="880" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="carrera" value="CARRERA" style="swimlane;html=0;rounded=1;startSize=36;horizontal=1;fillColor=#D9EAF7;swimlaneFillColor=#FFFFFF;strokeColor=#2F75B5;fontColor=#17365D;fontFamily=Arial;fontSize=15;fontStyle=1;shadow=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="280" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="carrera_fields" value="PK  id_carrera : VARCHAR(10)&#xa;nombre : VARCHAR(60)&#xa;grado_academico : VARCHAR(30)&#xa;duracion_cuatrimestres : INT&#xa;costo_credito : DECIMAL(10,2)&#xa;activa : BIT" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontFamily=Consolas;fontSize=11;fontColor=#1F2937;whiteSpace=wrap;" vertex="1" parent="carrera">
+          <mxGeometry y="36" width="280" height="184" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="curso" value="CURSO" style="swimlane;html=0;rounded=1;startSize=36;horizontal=1;fillColor=#D9EAF7;swimlaneFillColor=#FFFFFF;strokeColor=#2F75B5;fontColor=#17365D;fontFamily=Arial;fontSize=15;fontStyle=1;shadow=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="390" y="20" width="300" height="250" as="geometry"/>
+        </mxCell>
+        <mxCell id="curso_fields" value="PK  id_curso : VARCHAR(10)&#xa;codigo : VARCHAR(15)&#xa;nombre : VARCHAR(60)&#xa;creditos : INT&#xa;cupo_base : INT&#xa;id_carrera : VARCHAR(10)&#xa;activo : BIT" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontFamily=Consolas;fontSize=11;fontColor=#1F2937;whiteSpace=wrap;" vertex="1" parent="curso">
+          <mxGeometry y="36" width="300" height="214" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="estudiante" value="ESTUDIANTE" style="swimlane;html=0;rounded=1;startSize=36;horizontal=1;fillColor=#E2F0D9;swimlaneFillColor=#FFFFFF;strokeColor=#70AD47;fontColor=#375623;fontFamily=Arial;fontSize=15;fontStyle=1;shadow=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="790" y="20" width="320" height="290" as="geometry"/>
+        </mxCell>
+        <mxCell id="estudiante_fields" value="PK  id_estudiante : VARCHAR(10)&#xa;cedula : INT&#xa;nombre : VARCHAR(60)&#xa;apellido1 : VARCHAR(60)&#xa;apellido2 : VARCHAR(60)&#xa;fecha_nacimiento : DATE&#xa;correo : TEXT&#xa;telefono : VARCHAR(20)&#xa;activo : BIT" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontFamily=Consolas;fontSize=11;fontColor=#1F2937;whiteSpace=wrap;" vertex="1" parent="estudiante">
+          <mxGeometry y="36" width="320" height="254" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="profesor" value="PROFESOR" style="swimlane;html=0;rounded=1;startSize=36;horizontal=1;fillColor=#FCE4D6;swimlaneFillColor=#FFFFFF;strokeColor=#ED7D31;fontColor=#843C0C;fontFamily=Arial;fontSize=15;fontStyle=1;shadow=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="30" y="320" width="280" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="profesor_fields" value="PK  id_profesor : VARCHAR(10)&#xa;cedula : INT&#xa;nombre : VARCHAR(60)&#xa;apellido1 : VARCHAR(60)&#xa;apellido2 : VARCHAR(60)&#xa;correo : TEXT&#xa;telefono : VARCHAR(20)&#xa;activo : BIT" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontFamily=Consolas;fontSize=11;fontColor=#1F2937;whiteSpace=wrap;" vertex="1" parent="profesor">
+          <mxGeometry y="36" width="280" height="224" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="grupo" value="GRUPO" style="swimlane;html=0;rounded=1;startSize=36;horizontal=1;fillColor=#FFF2CC;swimlaneFillColor=#FFFFFF;strokeColor=#BF9000;fontColor=#7F6000;fontFamily=Arial;fontSize=15;fontStyle=1;shadow=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="390" y="340" width="310" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="grupo_fields" value="PK  id_grupo : VARCHAR(10)&#xa;id_curso : VARCHAR(10)&#xa;id_profesor : VARCHAR(10)&#xa;id_periodo : VARCHAR(10)&#xa;numero_grupo : INT&#xa;horario : VARCHAR(20)&#xa;aula : VARCHAR(10)&#xa;cupo_maximo : INT&#xa;modalidad : VARCHAR(20)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontFamily=Consolas;fontSize=11;fontColor=#1F2937;whiteSpace=wrap;" vertex="1" parent="grupo">
+          <mxGeometry y="36" width="310" height="264" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="matricula" value="MATRÍCULA" style="swimlane;html=0;rounded=1;startSize=36;horizontal=1;fillColor=#E4DFEC;swimlaneFillColor=#FFFFFF;strokeColor=#8064A2;fontColor=#403151;fontFamily=Arial;fontSize=15;fontStyle=1;shadow=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="790" y="350" width="320" height="290" as="geometry"/>
+        </mxCell>
+        <mxCell id="matricula_fields" value="PK  id_matricula : INT&#xa;id_estudiante : VARCHAR(10)&#xa;id_grupo : VARCHAR(10)&#xa;fecha_matricula : DATE&#xa;estado : VARCHAR(20)&#xa;monto_total : DECIMAL(12,2)&#xa;beca_porcentaje : DECIMAL(5,2)&#xa;pagada : BIT" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontFamily=Consolas;fontSize=11;fontColor=#1F2937;whiteSpace=wrap;" vertex="1" parent="matricula">
+          <mxGeometry y="36" width="320" height="254" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pago" value="PAGO" style="swimlane;html=0;rounded=1;startSize=36;horizontal=1;fillColor=#DDEBF7;swimlaneFillColor=#FFFFFF;strokeColor=#5B9BD5;fontColor=#1F4E79;fontFamily=Arial;fontSize=15;fontStyle=1;shadow=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="375" width="280" height="250" as="geometry"/>
+        </mxCell>
+        <mxCell id="pago_fields" value="PK  id_pago : INT&#xa;id_matricula : INT&#xa;fecha_pago : DATE&#xa;monto : DECIMAL(12,2)&#xa;metodo_pago : VARCHAR(25)&#xa;referencia : TEXT&#xa;confirmado : BIT" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontFamily=Consolas;fontSize=11;fontColor=#1F2937;whiteSpace=wrap;" vertex="1" parent="pago">
+          <mxGeometry y="36" width="280" height="214" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="periodo" value="PERIODO" style="swimlane;html=0;rounded=1;startSize=36;horizontal=1;fillColor=#F4CCCC;swimlaneFillColor=#FFFFFF;strokeColor=#C0504D;fontColor=#7F1D1D;fontFamily=Arial;fontSize=15;fontStyle=1;shadow=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="30" y="650" width="280" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="periodo_fields" value="PK  id_periodo : VARCHAR(10)&#xa;nombre : VARCHAR(20)&#xa;fecha_inicio : DATE&#xa;fecha_fin : DATE" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontFamily=Consolas;fontSize=11;fontColor=#1F2937;whiteSpace=wrap;" vertex="1" parent="periodo">
+          <mxGeometry y="36" width="280" height="154" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel_carrera_curso" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;strokeWidth=2;strokeColor=#2F75B5;fontFamily=Arial;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="carrera" target="curso">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_curso_grupo" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;strokeWidth=2;strokeColor=#2F75B5;fontFamily=Arial;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="curso" target="grupo">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_profesor_grupo" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;strokeWidth=2;strokeColor=#ED7D31;fontFamily=Arial;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="profesor" target="grupo">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_periodo_grupo" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;strokeWidth=2;strokeColor=#C0504D;fontFamily=Arial;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="periodo" target="grupo">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_estudiante_matricula" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;strokeWidth=2;strokeColor=#70AD47;fontFamily=Arial;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="estudiante" target="matricula">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_grupo_matricula" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;strokeWidth=2;strokeColor=#8064A2;fontFamily=Arial;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="grupo" target="matricula">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_matricula_pago" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;strokeWidth=2;strokeColor=#5B9BD5;fontFamily=Arial;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="matricula" target="pago">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
