@@ -2,11 +2,11 @@
 
 Proyecto académico de **Microsoft SQL Server y T-SQL** que modela la oferta académica, la asignación de grupos y el registro de matrículas, becas y pagos. El script crea la base `db_matricula_universitaria` y carga **99 registros de ejemplo** en **8 tablas**. Incluye **6 vistas** y **29 consultas de demostración**, incluidas las consultas a esas vistas.
 
-[Consultar el script SQL](Script_SQL_Proyecto%281%29.sql) · [Descargar el informe del proyecto](Informe_Proyecto_Matricula_Universitaria%282%29.docx)
+[Consultar el script SQL](sql/Script_SQL_Proyecto.sql) · [Descargar el informe del proyecto](docs/Informe_Proyecto_Matricula_Universitaria.docx)
 
 ## Modelo de datos
 
-![Modelo entidad relación del sistema de matrícula universitaria](Modelo_ER_Matricula_Universitaria%282%29.png)
+![Modelo entidad relación del sistema de matrícula universitaria](E-R/Modelo_ER_Matricula_Universitaria.png)
 
 | Tabla | Información que registra | Filas de ejemplo |
 | --- | --- | ---: |
@@ -21,7 +21,7 @@ Proyecto académico de **Microsoft SQL Server y T-SQL** que modela la oferta aca
 
 El diagrama representa siete relaciones de uno a muchos. El script declara claves primarias, restricciones `UNIQUE` y `CHECK`, y valores predeterminados con `DEFAULT`. Las consultas enlazan las tablas por sus identificadores. La validación de referencias mediante restricciones `FOREIGN KEY` queda pendiente en esta versión.
 
-[Ver el diagrama de tablas de SQL Server](Diagrama_SQL%281%29.png) · [Descargar el modelo editable para draw.io](Modelo_ER_Matricula_Universitaria%282%29.drawio)
+[Ver el diagrama de tablas de SQL Server](E-R/Diagrama_SQL.png) · [Descargar el modelo editable para draw.io](drawio/Modelo_ER_Matricula_Universitaria.drawio)
 
 ## Consultas incluidas
 
@@ -33,7 +33,7 @@ El diagrama representa siete relaciones de uno a muchos. El script declara clave
 ## Ejecutar el proyecto
 
 1. Abre **SQL Server Management Studio (SSMS)** y conéctate a una instancia de SQL Server con permisos para crear bases de datos.
-2. Abre [Script_SQL_Proyecto(1).sql](Script_SQL_Proyecto%281%29.sql) y ejecuta el archivo completo. Los lotes separados por `GO` crean la base, las tablas y la carga de ejemplo, y después ejecutan las consultas y crean las vistas.
+2. Abre [Script_SQL_Proyecto.sql](sql/Script_SQL_Proyecto.sql) y ejecuta el archivo completo. Los lotes separados por `GO` crean la base, las tablas y la carga de ejemplo, y después ejecutan las consultas y crean las vistas.
 3. Actualiza el explorador de objetos y abre `db_matricula_universitaria` para revisar las tablas, las vistas y los resultados.
 
 Si el nombre de la base ya está en uso y quieres repetir la instalación, elige un nombre de prueba distinto en las instrucciones `CREATE DATABASE` y `USE`.
